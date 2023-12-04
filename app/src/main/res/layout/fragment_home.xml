@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_background" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp">
+
+        <include layout="@layout/layout_top_bar"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintDimensionRatio="343:193">
+
+                <Space
+                    android:id="@+id/spaceTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintDimensionRatio="343:4"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutBalance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintDimensionRatio="228:193"
+                    app:layout_constraintLeft_toLeftOf="parent">
+
+                    <Space
+                        android:id="@+id/spaceBalanceLeft"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintDimensionRatio="30:193"
+                        app:layout_constraintLeft_toLeftOf="parent"/>
+
+                    <Space
+                        android:id="@+id/spaceBalanceRight"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintDimensionRatio="30:193"
+                        app:layout_constraintRight_toRightOf="parent"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/background_balance"
+                        android:scaleType="fitCenter"
+                        android:importantForAccessibility="no"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintLeft_toRightOf="@id/spaceBalanceLeft"
+                        app:layout_constraintRight_toLeftOf="@id/spaceBalanceRight"
+                        android:layout_marginBottom="25dp">
+
+                        <TextView
+                            android:id="@+id/textBalance"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:maxLines="1"
+                            android:layout_marginTop="30dp"
+                            android:textSize="30sp"
+                            android:fontFamily="@font/gilroy_bold"
+                            android:textColor="@color/white"
+                            tools:text="-15.79₴"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="20dp">
+
+                            <TextView
+                                android:id="@+id/textNextPayment"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textSize="12sp"
+                                android:fontFamily="@font/gilroy"
+                                android:textColor="@color/white"
+                                android:text="@string/next_payment"/>
+
+                            <TextView
+                                android:id="@+id/textNextPaymentDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/gilroy"
+                                android:textColor="@color/white"
+                                tools:text="05.03.2020"/>
+
+                            <TextView
+                                android:id="@+id/textNextPaymentAmount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:layout_marginTop="6dp"
+                                android:textSize="14sp"
+                                android:fontFamily="@font/gilroy"
+                                android:textColor="@color/white"
+                                android:text="@string/amount_placeholder"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:orientation="vertical"
+                    app:layout_constraintDimensionRatio="127:189"
+                    app:layout_constraintTop_toBottomOf="@id/spaceTop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <Space
+                            android:id="@+id/creditSpaceLeft"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_constraintDimensionRatio="20:81"
+                            app:layout_constraintLeft_toLeftOf="parent"/>
+
+                        <Space
+                            android:id="@+id/creditSpaceBottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="107:6"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutCredit"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="107:81"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toTopOf="@id/creditSpaceBottom"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/background_credit"
+                                android:scaleType="fitCenter"
+                                android:importantForAccessibility="no"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/icon_credit"
+                                    android:importantForAccessibility="no"
+                                    android:layout_marginTop="3dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/gilroy"
+                                    android:textColor="@color/white"
+                                    android:text="@string/credit"
+                                    android:layout_marginTop="10dp"/>
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layoutDeposit"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintDimensionRatio="127:102">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/background_deposit"
+                                android:scaleType="fitCenter"
+                                android:importantForAccessibility="no"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center">
+
+                                <ImageView
+                                    android:layout_width="34dp"
+                                    android:layout_height="34dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/icon_deposit"
+                                    android:importantForAccessibility="no"
+                                    android:layout_marginTop="24dp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/gilroy"
+                                    android:textColor="@color/white"
+                                    android:text="@string/deposit"
+                                    android:layout_marginTop="10dp"/>
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutServices"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background_tab"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabRippleColor="@null"
+            app:tabIndicatorColor="@null"
+            app:tabTextColor="@color/text_gray"
+            app:tabTextAppearance="@style/TabTextAppearance"
+            app:tabSelectedTextColor="@color/black"
+            app:tabIndicator="@drawable/background_tab_item_selected"
+            app:tabIndicatorGravity="stretch">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/active_services"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/services"/>
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <TextView
+            android:id="@+id/textSelectedServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:fontFamily="@font/gilroy_bold"
+            android:text="@string/active_services"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSelectedServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_service"
+            android:layout_marginTop="17dp"
+            android:paddingBottom="74dp"
+            android:clipToPadding="false"/>
+
+        <!-- Паддінг боттом ^ обов'язково у всіх фрагментах бо буде залазити під BottomNavigationView
+        Можна і без паддінгу, але тоді елементи не будуть залазити під чорну цятку і виглядати буде криво -->
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

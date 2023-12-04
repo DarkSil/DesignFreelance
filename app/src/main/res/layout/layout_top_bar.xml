@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Зробив окремим лейаутом щоб інклюдити,
+не зробив загальний на активності бо тоді не гарно скролиться-->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginTop="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/textUserId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/gilroy_bold"
+        android:textSize="12sp"
+        android:textColor="@color/text_gray"
+        tools:text="67676"
+        android:layout_marginEnd="10dp"/>
+
+    <ImageView
+        android:id="@+id/image24Hours"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/icon_24_hours"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/wcag_support"/>
+
+    <ImageView
+        android:id="@+id/imageNotifications"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/icon_notifications"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/wcag_notifications"/>
+
+</LinearLayout>

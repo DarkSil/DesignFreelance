@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">DesignFreelance</string>
+    <string name="wcag_notifications">Notifications</string>
+    <string name="wcag_support">24 hours support</string>
+    <string name="amount_placeholder">У розмірі: {amount}грн</string>
+    <string name="next_payment">Наступне зняття</string>
+    <string name="credit">Кредит</string>
+    <string name="deposit">Поповнити</string>
+    <string name="active_services">Активні послуги</string>
+    <string name="services">Сервіси</string>
+    <string name="day">День</string>
+    <string name="month">Місяць</string>
+    <string name="year">Рік</string>
+    <string name="home">Головна</string>
+    <string name="payments">Платежi</string>
+    <string name="services_menu">Послуги</string>
+    <string name="profile">Профiль</string>
+    <string name="tv">TV</string>
+    <string name="user_card">Карточка абонента:</string>
+    <string name="discount">Знижка</string>
+    <string name="code">Код платежу</string>
+    <string name="address">Адреса</string>
+    <string name="together_text">Ви з нами вже {count} днів!</string>
+    <string name="payment_text">Абонентська плата</string>
+    <string name="next_payment_text">Наступне зняття {date}\nу розмірі {price}</string>
+    <string name="logout">Вийти</string>
+</resources>
