@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentContainerView
 import com.example.designfreelance.home.FragmentHome
+import com.example.designfreelance.payments.FragmentTransactions
 import com.example.designfreelance.profile.FragmentProfile
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val fragmentHome = FragmentHome()
+        val fragmentTransactions = FragmentTransactions()
         val fragmentProfile = FragmentProfile()
 
         // ----------------- Приклад встановлення першого екрану
@@ -39,7 +41,9 @@ class MainActivity : AppCompatActivity() {
                         .commit()
                 }
                 R.id.menu_payments -> {
-
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView, fragmentTransactions)
+                        .commit()
                 }
                 R.id.menu_services -> {
 

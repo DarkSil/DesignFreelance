@@ -6,4 +6,6 @@
     <color name="color_background">#F6F6F6</color>
     <color name="service_gray">#BCBEC0</color>
     <color name="red">#FA7878</color>
+    <color name="transaction_red">#C10303</color>
+    <color name="transaction_green">#21BD4D</color>
 </resources>
