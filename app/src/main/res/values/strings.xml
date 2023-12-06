@@ -24,4 +24,17 @@
     <string name="payment_text">Абонентська плата</string>
     <string name="next_payment_text">Наступне зняття {date}\nу розмірі {price}</string>
     <string name="logout">Вийти</string>
+    <string name="phone">Телефон:</string>
+    <string name="phone_1">+38 (044) 5555 512</string>
+    <string name="phone_2">+38 (044) 5555 513</string>
+    <string name="email">Email:</string>
+    <string name="email_address">info@support.ua</string>
+    <string name="web_site">Веб сайт:</string>
+    <string name="website_url">https://my.euronet.com.ua/</string>
+    <string name="address_">Адреса:</string>
+    <string name="address_name">м. Київ, метро Почайна</string>
+    <string name="viber">Viber:</string>
+    <string name="viber_number">+38 (044) 5555 514</string>
+    <string name="telegram">Telegram:</string>
+    <string name="telegram_nickname">\@Telegram</string>
 </resources>

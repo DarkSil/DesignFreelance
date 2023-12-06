@@ -1,14 +1,11 @@
 package com.example.designfreelance
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.FragmentContainerView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.designfreelance.home.FragmentHome
 import com.example.designfreelance.payments.FragmentTransactions
 import com.example.designfreelance.profile.FragmentProfile
+import com.example.designfreelance.tv.FragmentTV
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -23,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         val fragmentHome = FragmentHome()
         val fragmentTransactions = FragmentTransactions()
         val fragmentProfile = FragmentProfile()
+        val fragmentTV = FragmentTV()
 
         // ----------------- Приклад встановлення першого екрану
 
@@ -54,9 +52,10 @@ class MainActivity : AppCompatActivity() {
                         .commit()
                 }
                 R.id.menu_tv -> {
-
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView, fragmentTV)
+                        .commit()
                 }
-                else -> false
             }
             true
         }
