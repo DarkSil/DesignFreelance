@@ -37,4 +37,6 @@
     <string name="viber_number">+38 (044) 5555 514</string>
     <string name="telegram">Telegram:</string>
     <string name="telegram_nickname">\@Telegram</string>
+    <string name="internet">Інтернет</string>
+    <string name="other">Інше</string>
 </resources>

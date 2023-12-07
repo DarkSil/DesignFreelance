@@ -8,4 +8,5 @@
     <color name="red">#FA7878</color>
     <color name="transaction_red">#C10303</color>
     <color name="transaction_green">#21BD4D</color>
+    <color name="background_selected">#515264</color>
 </resources>
