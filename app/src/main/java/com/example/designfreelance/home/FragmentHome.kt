@@ -1,5 +1,6 @@
 package com.example.designfreelance.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.designfreelance.R
+import com.example.designfreelance.home.deposit.ActivityDeposit
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 
@@ -87,7 +89,7 @@ class FragmentHome : Fragment() {
         }
 
         layoutDeposit.setOnClickListener {
-            Toast.makeText(requireContext(), "DEPOSIT", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), ActivityDeposit::class.java))
         }
 
         image24Hours.setOnClickListener {

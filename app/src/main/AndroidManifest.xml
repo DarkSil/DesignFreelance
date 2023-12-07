@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".services.ActivityServices"/>
+        <activity android:name=".home.deposit.ActivityDeposit"/>
     </application>
 
 </manifest>

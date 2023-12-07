@@ -39,4 +39,18 @@
     <string name="telegram_nickname">\@Telegram</string>
     <string name="internet">Інтернет</string>
     <string name="other">Інше</string>
+    <string name="deposit_text">Поповнення рахунку</string>
+    <string name="image_back">Image back</string>
+    <string name="monobank">monopay</string>
+    <string name="gpay">Pay</string>
+    <string name="deposit_sum">Сума поповнення</string>
+    <string name="ukr_hryvnia">₴</string>
+    <string name="placeholder_400"><u>400₴</u></string>
+    <string name="placeholder300"><u>300₴</u></string>
+    <string name="placeholder200"><u>200₴</u></string>
+    <string name="promotion_text">ПРИ ПОПОВНЕННІ РАХУНКУ НА СУМУ ВІД 6 МІСЯЦІВ\nДОДАТКОВО 1 МІСЯЦЬ БЕЗКОШТОВНО\n\nПРИ ПОПОВНЕННІ РАХУНКУ НА СУМУ ВІД 12 МІСЯЦІВ\nДОДАТКОВО 3 МІСЯЦІ БЕЗКОШТОВНО</string>
+    <string name="personal_payment_code">Ваш персональний платіжний код</string>
+    <string name="personal_payment_code_hint">Персональний платіжний код</string>
+    <string name="edit_value">Edit value</string>
+    <string name="zero_placeholder">0</string>
 </resources>
