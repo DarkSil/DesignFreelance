@@ -19,6 +19,7 @@ data class ServiceItem(
     enum class ServiceType(val imageType: Int) {
         INTERNET(R.drawable.icon_internet),
         TV(R.drawable.icon_tv),
+        COMBO(R.drawable.icon_combo),
         OTHER(R.drawable.icon_other)
     }
 

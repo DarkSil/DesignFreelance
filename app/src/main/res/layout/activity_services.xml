@@ -22,115 +22,159 @@
 
             <include layout="@layout/layout_top_bar"/>
 
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:baselineAligned="false"
-                android:layout_marginTop="20dp">
+                android:paddingBottom="10dp"
+                android:fadeScrollbars="false">
 
                 <LinearLayout
-                    android:id="@+id/linearInternet"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="7dp"
-                    android:background="@drawable/background_service_selected"
-                    android:gravity="center">
-                    
-                    <ImageView
-                        android:id="@+id/imageInternet"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/icon_internet_small"
-                        android:scaleType="fitCenter"
-                        android:importantForAccessibility="no"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp">
 
-                    <TextView
-                        android:id="@+id/textInternet"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:text="@string/internet"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/gilroy_medium"
-                        android:textSize="14sp"
-                        android:layout_marginTop="14dp"/>
+                    <LinearLayout
+                        android:id="@+id/linearInternet"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="7dp"
+                        android:background="@drawable/background_service_selected"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imageInternet"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/icon_internet_small"
+                            android:scaleType="fitCenter"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:id="@+id/textInternet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/internet"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:textSize="14sp"
+                            android:layout_marginTop="14dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearTV"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="7dp"
+                        android:layout_marginStart="7dp"
+                        android:background="@drawable/background_service_unselected"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imageTV"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/icon_tv_small"
+                            app:tint="@color/background_selected"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="3dp"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:id="@+id/textTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/tv"
+                            android:gravity="center"
+                            android:textColor="@color/background_selected"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:textSize="14sp"
+                            android:layout_marginTop="17dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearCombo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="7dp"
+                        android:layout_marginStart="7dp"
+                        android:background="@drawable/background_service_unselected"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imageCombo"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/icon_combo_small"
+                            app:tint="@color/background_selected"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="3dp"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:id="@+id/textCombo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/combo"
+                            android:gravity="center"
+                            android:textColor="@color/background_selected"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:textSize="14sp"
+                            android:layout_marginTop="17dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearOther"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="7dp"
+                        android:background="@drawable/background_service_unselected"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/imageOther"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/icon_other_small"
+                            app:tint="@color/background_selected"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="3dp"
+                            android:importantForAccessibility="no"/>
+
+                        <TextView
+                            android:id="@+id/textOther"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="10dp"
+                            android:text="@string/other"
+                            android:gravity="center"
+                            android:textColor="@color/background_selected"
+                            android:fontFamily="@font/gilroy_medium"
+                            android:textSize="14sp"
+                            android:layout_marginTop="17dp"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/linearTV"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="7dp"
-                    android:layout_marginStart="7dp"
-                    android:background="@drawable/background_service_unselected"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/imageTV"
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:src="@drawable/icon_tv_small"
-                        app:tint="@color/background_selected"
-                        android:scaleType="fitCenter"
-                        android:layout_marginTop="3dp"
-                        android:importantForAccessibility="no"/>
-
-                    <TextView
-                        android:id="@+id/textTV"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:text="@string/tv"
-                        android:gravity="center"
-                        android:textColor="@color/background_selected"
-                        android:fontFamily="@font/gilroy_medium"
-                        android:textSize="14sp"
-                        android:layout_marginTop="17dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearOther"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:layout_marginStart="7dp"
-                    android:background="@drawable/background_service_unselected"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/imageOther"
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:src="@drawable/icon_other_small"
-                        app:tint="@color/background_selected"
-                        android:scaleType="fitCenter"
-                        android:layout_marginTop="3dp"
-                        android:importantForAccessibility="no"/>
-
-                    <TextView
-                        android:id="@+id/textOther"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="10dp"
-                        android:text="@string/other"
-                        android:gravity="center"
-                        android:textColor="@color/background_selected"
-                        android:fontFamily="@font/gilroy_medium"
-                        android:textSize="14sp"
-                        android:layout_marginTop="17dp"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </HorizontalScrollView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerServices"

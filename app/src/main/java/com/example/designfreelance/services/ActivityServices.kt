@@ -72,11 +72,14 @@ class ActivityServices : AppCompatActivity() {
 
         val linearInternet = findViewById<LinearLayout>(R.id.linearInternet)
         val linearTV = findViewById<LinearLayout>(R.id.linearTV)
+        val linearCombo = findViewById<LinearLayout>(R.id.linearCombo)
         val linearOther = findViewById<LinearLayout>(R.id.linearOther)
         val imageInternet = findViewById<ImageView>(R.id.imageInternet)
         val textInternet = findViewById<TextView>(R.id.textInternet)
         val imageTV = findViewById<ImageView>(R.id.imageTV)
         val textTV = findViewById<TextView>(R.id.textTV)
+        val imageCombo = findViewById<ImageView>(R.id.imageCombo)
+        val textCombo = findViewById<TextView>(R.id.textCombo)
         val imageOther = findViewById<ImageView>(R.id.imageOther)
         val textOther = findViewById<TextView>(R.id.textOther)
 
@@ -88,6 +91,10 @@ class ActivityServices : AppCompatActivity() {
             linearTV.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
             imageTV.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
             textTV.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
+
+            linearCombo.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
+            imageCombo.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
+            textCombo.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
 
             linearOther.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
             imageOther.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
@@ -110,6 +117,10 @@ class ActivityServices : AppCompatActivity() {
             imageTV.setColorFilter(ContextCompat.getColor(this, R.color.white))
             textTV.setTextColor(ContextCompat.getColor(this, R.color.white))
 
+            linearCombo.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
+            imageCombo.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
+            textCombo.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
+
             linearOther.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
             imageOther.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
             textOther.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
@@ -122,6 +133,31 @@ class ActivityServices : AppCompatActivity() {
             adapter.notifyItemRangeChanged(0, size)
         }
 
+        linearCombo.setOnClickListener {
+            linearInternet.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
+            imageInternet.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
+            textInternet.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
+
+            linearTV.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
+            imageTV.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
+            textTV.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
+
+            linearCombo.background = ContextCompat.getDrawable(this, R.drawable.background_service_selected)
+            imageCombo.setColorFilter(ContextCompat.getColor(this, R.color.white))
+            textCombo.setTextColor(ContextCompat.getColor(this, R.color.white))
+
+            linearOther.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
+            imageOther.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
+            textOther.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
+
+            val size = arrayList.size
+
+            arrayList.clear()
+            arrayList.addAll(getListOfServices(ServiceItem.ServiceType.COMBO))
+
+            adapter.notifyItemRangeChanged(0, size)
+        }
+
         linearOther.setOnClickListener {
             linearInternet.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
             imageInternet.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
@@ -130,6 +166,10 @@ class ActivityServices : AppCompatActivity() {
             linearTV.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
             imageTV.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
             textTV.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
+
+            linearCombo.background = ContextCompat.getDrawable(this, R.drawable.background_service_unselected)
+            imageCombo.setColorFilter(ContextCompat.getColor(this, R.color.background_selected))
+            textCombo.setTextColor(ContextCompat.getColor(this, R.color.background_selected))
 
             linearOther.background = ContextCompat.getDrawable(this, R.drawable.background_service_selected)
             imageOther.setColorFilter(ContextCompat.getColor(this, R.color.white))
@@ -197,6 +237,33 @@ class ActivityServices : AppCompatActivity() {
                             "183 канали + 43 HD канали",
                             "129 грн",
                             ServiceItem.ServiceType.TV,
+                            ServiceItem.ServicePeriod.MONTH
+                        )
+                    )
+                )
+            }
+            ServiceItem.ServiceType.COMBO -> {
+                list.addAll(
+                    arrayListOf(
+                        ServiceItem(
+                            "TV: VIP HD",
+                            "183 канали + 43 HD канали",
+                            "129 грн",
+                            ServiceItem.ServiceType.COMBO,
+                            ServiceItem.ServicePeriod.MONTH
+                        ),
+                        ServiceItem(
+                            "TV: VIP HD",
+                            "183 канали + 43 HD канали",
+                            "129 грн",
+                            ServiceItem.ServiceType.COMBO,
+                            ServiceItem.ServicePeriod.MONTH
+                        ),
+                        ServiceItem(
+                            "TV: VIP HD",
+                            "183 канали + 43 HD канали",
+                            "129 грн",
+                            ServiceItem.ServiceType.COMBO,
                             ServiceItem.ServicePeriod.MONTH
                         )
                     )
