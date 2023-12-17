@@ -303,17 +303,40 @@
                     android:layout_weight="1"
                     android:text="@string/monobank"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/gilroy_bold"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_medium"
                     android:background="@drawable/background_monopay"
                     android:gravity="center"
                     android:layout_marginEnd="10dp"/>
 
-                <com.google.android.gms.wallet.button.PayButton
+                <LinearLayout
                     android:id="@+id/buttonGPay"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/background_googlepay"
+                    android:layout_marginStart="10dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/icon_gpay_logo"
+                        android:layout_marginEnd="2dp"
+                        android:importantForAccessibility="no"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/gpay"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/gilroy_medium"
+                        android:gravity="center"/>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -321,27 +344,11 @@
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintWebView"
+    <com.cloudipsp.android.CloudipspWebView
+        android:id="@+id/cloudipspWebView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
-
-        <com.cloudipsp.android.CloudipspWebView
-            android:id="@+id/cloudipspWebView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/color_background"/>
-
-        <ImageView
-            android:id="@+id/imageCross"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/icon_cross"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_margin="20dp"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="@color/color_background"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

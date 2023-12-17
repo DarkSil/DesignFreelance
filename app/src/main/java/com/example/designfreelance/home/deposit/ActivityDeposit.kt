@@ -9,7 +9,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.cloudipsp.android.Cloudipsp
@@ -20,11 +19,6 @@ import com.cloudipsp.android.GooglePayCall
 import com.cloudipsp.android.Order
 import com.cloudipsp.android.Receipt
 import com.example.designfreelance.R
-import com.google.android.gms.wallet.button.ButtonConstants
-import com.google.android.gms.wallet.button.ButtonOptions
-import com.google.android.gms.wallet.button.PayButton
-import org.json.JSONArray
-import org.json.JSONObject
 
 
 class ActivityDeposit : AppCompatActivity() {
@@ -32,8 +26,6 @@ class ActivityDeposit : AppCompatActivity() {
     private var googlePayCall : GooglePayCall? = null
     private var cloudipsp : Cloudipsp? = null
     private var cloudipspWebView : CloudipspWebView? = null
-    private var constraintWebView : ConstraintLayout? = null
-    private var imageCross : ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,28 +76,13 @@ class ActivityDeposit : AppCompatActivity() {
         }
 
         cloudipspWebView = findViewById(R.id.cloudipspWebView)
-        constraintWebView = findViewById(R.id.constraintWebView)
-        imageCross = findViewById(R.id.imageCross)
         cloudipsp = Cloudipsp(1448282, cloudipspWebView)
 
         if (savedInstanceState != null) {
             googlePayCall = savedInstanceState.getParcelable("google_pay_call");
         }
 
-        constraintWebView?.setOnClickListener {}
-
-        imageCross?.setOnClickListener {
-            constraintWebView?.isVisible = false
-        }
-
-        val buttonGPay = findViewById<PayButton>(R.id.buttonGPay)
-        buttonGPay.initialize(
-            ButtonOptions.newBuilder()
-                .setButtonTheme(ButtonConstants.ButtonTheme.DARK)
-                .setButtonType(ButtonConstants.ButtonType.PAY)
-                .setAllowedPaymentMethods(baseCardPaymentMethod().toString())
-                .build()
-        )
+        val buttonGPay = findViewById<LinearLayout>(R.id.buttonGPay)
         buttonGPay.setOnClickListener {
             val amount = editSumDeposit.text.toString().toIntOrNull()
             if (amount != null && amount > 0) {
@@ -118,13 +95,13 @@ class ActivityDeposit : AppCompatActivity() {
                     )
                     order.setLang(Order.Lang.uk)
 
-                    constraintWebView?.isVisible = true
+                    cloudipspWebView?.isVisible = true
 
                     cloudipsp?.googlePayInitialize(order, this, 100500, object : Cloudipsp.GooglePayCallback {
                         override fun onPaidFailure(e: Cloudipsp.Exception?) {
                             println(e?.message)
 
-                            constraintWebView?.isVisible = false
+                            cloudipspWebView?.isVisible = false
                         }
 
                         override fun onGooglePayInitialized(result: GooglePayCall?) {
@@ -152,43 +129,17 @@ class ActivityDeposit : AppCompatActivity() {
                     object : PayCallback {
                         override fun onPaidFailure(e: Cloudipsp.Exception?) {
                             println(e?.message)
-                            constraintWebView?.isVisible = false
+                            cloudipspWebView?.isVisible = false
                         }
 
                         override fun onPaidProcessed(receipt: Receipt?) {
-                            constraintWebView?.isVisible = false
+                            cloudipspWebView?.isVisible = false
                         }
                     }
                 )
             ) {
 
             }
-        }
-    }
-
-    private val allowedCardNetworks = JSONArray(listOf(
-        "AMEX",
-        "DISCOVER",
-        "INTERAC",
-        "JCB",
-        "MASTERCARD",
-        "VISA"))
-
-    private val allowedCardAuthMethods = JSONArray(listOf(
-        "PAN_ONLY",
-        "CRYPTOGRAM_3DS"))
-
-    private fun baseCardPaymentMethod(): JSONObject {
-        return JSONObject().apply {
-
-            val parameters = JSONObject().apply {
-                put("allowedAuthMethods", allowedCardAuthMethods)
-                put("allowedCardNetworks", allowedCardNetworks)
-                put("billingAddressRequired", false)
-            }
-
-            put("type", "CARD")
-            put("parameters", parameters)
         }
     }
 
