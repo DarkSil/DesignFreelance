@@ -296,47 +296,19 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent">
 
-                <TextView
+                <include layout="@layout/pay_with_monopay_button"
                     android:id="@+id/buttonMonoPay"
+                    android:layout_height="wrap_content"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/monobank"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/gilroy_medium"
-                    android:background="@drawable/background_monopay"
-                    android:gravity="center"
-                    android:layout_marginEnd="10dp"/>
+                    android:layout_marginEnd="3dp"/>
 
-                <LinearLayout
+                <include layout="@layout/pay_with_googlepay_button"
                     android:id="@+id/buttonGPay"
+                    android:layout_height="wrap_content"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:background="@drawable/background_googlepay"
-                    android:layout_marginStart="10dp">
-
-                    <ImageView
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/icon_gpay_logo"
-                        android:layout_marginEnd="2dp"
-                        android:importantForAccessibility="no"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:text="@string/gpay"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/gilroy_medium"
-                        android:gravity="center"/>
-
-                </LinearLayout>
+                    android:layout_marginStart="3dp"/>
 
             </LinearLayout>
 

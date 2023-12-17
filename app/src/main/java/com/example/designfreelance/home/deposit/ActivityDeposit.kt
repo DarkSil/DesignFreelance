@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -70,7 +71,7 @@ class ActivityDeposit : AppCompatActivity() {
         val textPaymentCodeValue = findViewById<TextView>(R.id.textPaymentCodeValue)
         textPaymentCodeValue.text = "67676"
 
-        val buttonMonoPay = findViewById<TextView>(R.id.buttonMonoPay)
+        val buttonMonoPay = findViewById<RelativeLayout>(R.id.buttonMonoPay)
         buttonMonoPay.setOnClickListener {
             Toast.makeText(this, "MONOPAY", Toast.LENGTH_SHORT).show()
         }
@@ -82,7 +83,7 @@ class ActivityDeposit : AppCompatActivity() {
             googlePayCall = savedInstanceState.getParcelable("google_pay_call");
         }
 
-        val buttonGPay = findViewById<LinearLayout>(R.id.buttonGPay)
+        val buttonGPay = findViewById<RelativeLayout>(R.id.buttonGPay)
         buttonGPay.setOnClickListener {
             val amount = editSumDeposit.text.toString().toIntOrNull()
             if (amount != null && amount > 0) {
