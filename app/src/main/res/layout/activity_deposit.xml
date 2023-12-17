@@ -316,11 +316,27 @@
 
     </LinearLayout>
 
-    <com.cloudipsp.android.CloudipspWebView
-        android:id="@+id/cloudipspWebView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintWebView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/color_background"
-        android:visibility="gone"/>
+        android:visibility="gone">
+
+        <com.cloudipsp.android.CloudipspWebView
+            android:id="@+id/cloudipspWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_background"/>
+
+        <ImageView
+            android:id="@+id/imageCross"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_cross"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

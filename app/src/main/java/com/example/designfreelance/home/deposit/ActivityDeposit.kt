@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.cloudipsp.android.Cloudipsp
@@ -27,6 +28,8 @@ class ActivityDeposit : AppCompatActivity() {
     private var googlePayCall : GooglePayCall? = null
     private var cloudipsp : Cloudipsp? = null
     private var cloudipspWebView : CloudipspWebView? = null
+    private var constraintWebView : ConstraintLayout? = null
+    private var imageCross : ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,10 +80,18 @@ class ActivityDeposit : AppCompatActivity() {
         }
 
         cloudipspWebView = findViewById(R.id.cloudipspWebView)
+        constraintWebView = findViewById(R.id.constraintWebView)
+        imageCross = findViewById(R.id.imageCross)
         cloudipsp = Cloudipsp(1448282, cloudipspWebView)
 
         if (savedInstanceState != null) {
             googlePayCall = savedInstanceState.getParcelable("google_pay_call");
+        }
+
+        constraintWebView?.setOnClickListener {}
+
+        imageCross?.setOnClickListener {
+            constraintWebView?.isVisible = false
         }
 
         val buttonGPay = findViewById<RelativeLayout>(R.id.buttonGPay)
@@ -96,13 +107,13 @@ class ActivityDeposit : AppCompatActivity() {
                     )
                     order.setLang(Order.Lang.uk)
 
-                    cloudipspWebView?.isVisible = true
+                    constraintWebView?.isVisible = true
 
                     cloudipsp?.googlePayInitialize(order, this, 100500, object : Cloudipsp.GooglePayCallback {
                         override fun onPaidFailure(e: Cloudipsp.Exception?) {
                             println(e?.message)
 
-                            cloudipspWebView?.isVisible = false
+                            constraintWebView?.isVisible = false
                         }
 
                         override fun onGooglePayInitialized(result: GooglePayCall?) {
@@ -130,11 +141,11 @@ class ActivityDeposit : AppCompatActivity() {
                     object : PayCallback {
                         override fun onPaidFailure(e: Cloudipsp.Exception?) {
                             println(e?.message)
-                            cloudipspWebView?.isVisible = false
+                            constraintWebView?.isVisible = false
                         }
 
                         override fun onPaidProcessed(receipt: Receipt?) {
-                            cloudipspWebView?.isVisible = false
+                            constraintWebView?.isVisible = false
                         }
                     }
                 )
